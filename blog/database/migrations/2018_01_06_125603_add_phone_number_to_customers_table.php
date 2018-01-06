@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTest3Table extends Migration
+class AddPhoneNumberToCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateTest3Table extends Migration
      */
     public function up()
     {
-        Schema::create('test3', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::table('customers', function (Blueprint $table) {
+            $table->string('phone_number')->unique()->after('address');
         });
     }
 
@@ -26,6 +25,8 @@ class CreateTest3Table extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('test3');
+        Schema::table('customers', function (Blueprint $table) {
+            $table->dropColumn('phone_number');
+        });
     }
 }
