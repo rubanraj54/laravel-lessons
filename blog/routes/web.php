@@ -16,12 +16,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/test/', function () {
-    // return view('cache.index');
-    return view('test.index`');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('/hellolaravel',function(){
+//     return "hello laravel";
+// });
+
+Route::get('/hellolaravel','HelloController@sayHello');
