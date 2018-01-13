@@ -5,6 +5,7 @@
         <title></title>
     </head>
     <body>
-        <p>Hello laravel</p>
+        <p>Hello laravel {{ $id }}</p> <br>
+        <p>Name is: {{ $name }}</p>
     </body>
 </html>

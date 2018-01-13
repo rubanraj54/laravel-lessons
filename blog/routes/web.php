@@ -24,4 +24,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 //     return "hello laravel";
 // });
 
-Route::get('/hellolaravel','HelloController@sayHello');
+Route::get('/hellolaravel/{id}/{name}','HelloController@sayHello');
