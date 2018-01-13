@@ -25,3 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // });
 
 Route::get('/hellolaravel/{id}/{name}','HelloController@sayHello');
+
+Route::get('/customers','CustomersController@showAllCustomers');
+
+Route::get('/customers/{customer}','CustomersController@showCustomer');
