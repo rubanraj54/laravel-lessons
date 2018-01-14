@@ -9,6 +9,7 @@ class CustomersController extends Controller
 {
     public function showAllCustomers()
     {
+        //checking deployment
         $customers = Customer::all();
         return view('customers.index',['customers' => $customers]);
     }
