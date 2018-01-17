@@ -28,4 +28,6 @@ Route::get('/hellolaravel/{id}/{name}','HelloController@sayHello');
 
 Route::get('/customers','CustomersController@showAllCustomers');
 
-Route::get('/customers/{customer}','CustomersController@showCustomer');
+Route::post('/customers/create','CustomersController@create');
+Route::post('/customers/update','CustomersController@update');
+Route::get('/customers/delete/{customer}','CustomersController@delete');

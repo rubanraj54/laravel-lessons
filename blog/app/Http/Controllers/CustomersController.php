@@ -18,4 +18,39 @@ class CustomersController extends Controller
     {
         dd($customer->mobile_number);
     }
+
+    public function create(Request $request)
+    {
+        $customer = new Customer();
+        $customer->name = $request->name;
+        $customer->address = $request->address;
+        $customer->mobile_number = $request->mobile_number;
+        $customer->age = $request->age;
+        $customer->type = $request->type;
+        $customer->save();
+
+        return back();
+    }
+
+    public function update(Request $request)
+    {
+        $customer = Customer::find($request->id);
+        $customer->name = isset($request->name) ? $request->name : $customer->name;
+        $customer->address = isset($request->address)? $request->address : $customer->address;
+        $customer->mobile_number = isset($request->mobile_number)? $request->mobile_number : $customer->mobile_number;
+        $customer->age = isset($request->age)? $request->age : $customer->age;
+        $customer->type = isset($request->type)? $request->type : $customer->type;
+        $customer->save();
+
+        return back();
+
+    }
+
+    public function delete(Request $request,Customer $customer)
+    {
+        $customer->delete();
+
+        return back();
+    }
+
 }
