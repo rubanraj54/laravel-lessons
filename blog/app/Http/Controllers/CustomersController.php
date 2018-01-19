@@ -10,8 +10,15 @@ class CustomersController extends Controller
     public function showAllCustomers()
     {
         //checking deployment
+        // $customers = Customer::where('age','>=',34)
+        //                         ->where('type',"=",1)
+        //                         ->orderBy('age')
+        //                         ->take(1)
+        //                         ->get();
         $customers = Customer::all();
-        return view('customers.index',['customers' => $customers]);
+        // dd($customers);
+        return view('customers.index',
+                    ['customers' => $customers]);
     }
 
     public function showCustomer(Customer $customer)
