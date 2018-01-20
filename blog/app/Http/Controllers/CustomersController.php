@@ -9,14 +9,13 @@ class CustomersController extends Controller
 {
     public function showAllCustomers()
     {
-        //checking deployment
         // $customers = Customer::where('age','>=',34)
         //                         ->where('type',"=",1)
         //                         ->orderBy('age')
         //                         ->take(1)
         //                         ->get();
-        $customers = Customer::all();
-        // dd($customers);
+        $customers = Customer::paginate(8);
+
         return view('customers.index',
                     ['customers' => $customers]);
     }
