@@ -4,7 +4,17 @@
             <h4>Add new customer</h4>
         </div>
         <div class="panel-body">
-            <form class="" action="/customers/create" method="post">
+
+            {!! Form::open(['url'=>"/customers/create",'method' => 'post']) !!}
+                {!! Form::customText('name','Name',"",['id'=>'name','placeholder'=>"Enter name"]) !!}
+                {!! Form::customText('address','Address',"",['id'=>'address','placeholder'=>"Enter Address"]) !!}
+                {!! Form::customText('mobile_number','Mobile number',"",['id'=>'mobile_number','placeholder'=>"Enter Mobile number"]) !!}
+                {!! Form::customText('age','Age',"",['id'=>'age','placeholder'=>"Enter age"]) !!}
+                {!! Form::customText('type','Type',"",['id'=>'name','placeholder'=>"Enter Type"]) !!}
+                {!! Form::submit("Submit",['class'=>"btn btn-primary"]) !!}
+            {!! Form::close() !!}
+
+            {{-- <form class="" action="/customers/create" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -27,7 +37,7 @@
                     <input type="text" class="form-control" id="type" name="type" placeholder="Enter type">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            </form> --}}
 
         </div>
     </div>
