@@ -27,6 +27,13 @@ class CustomersController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate($request,[
+            'name' => 'required',
+            'address' => 'required|usa',
+            'mobile_number' => 'required|size:10',
+            'age' => 'required',
+            'type' => 'required'
+        ]);
         $customer = new Customer();
         $customer->name = $request->name;
         $customer->address = $request->address;

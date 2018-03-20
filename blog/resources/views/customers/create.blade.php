@@ -20,6 +20,7 @@
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
                 </div>
+
                 <div class="form-group">
                     <label for="address">Address</label>
                     <input type="text" class="form-control" id="address" name="address" placeholder="Enter address">
